@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>播放器界面</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="js/lrc.js"></script>
+	<script type="text/javascript" src="js/myaudio.js"></script>
+</head>
+<body>
+	<div id="player" class="h5p h5p-black">
+		<audio id="audio"></audio>
+		<div class="h5p-cover">
+			<span class="h5p-coverImg"></span>
+			<img src="img/default.jpg" width="120" height="120" alt="">
+		</div>
+		<div class="h5p-info">
+			<div class="h5p-title">歌曲名</div>
+			<div class="h5p-artist">演唱者</div>
+			<div class="h5p-lrc">阳光下的泡沫 是彩色的 就像被骗的我 是幸福的</div>
+		</div>
+		<div class="h5p-control">
+			<div class="h5p-buttons">				
+				<a id="prev" class="h5p-btn others btn-prev" href="javascript:void(0);">prev</a>
+				<a id="play" class="h5p-btn btn-play" href="javascript:void(0);">play</a>
+				<a id="next" class="h5p-btn others btn-next" href="javascript:void(0);">next</a>	
+			</div>
+			<div class="h5p-volume">
+				<a href="javascript:void(0);" class="increase"></a>
+				<span class="base-bar">
+					<span class="process-bar"></span>
+					<a class="slider"></a>
+				</span>
+			</div>
+		</div>
+		<div class="h5p-progress">
+			<div class="base-bar">				
+				<span class="ready-bar">
+					<span class="process-bar"></span>
+				</span>
+			</div>
+			<div class="h5p-time">
+				<span class="current-time">00:00</span> / <span class="all-time">00:00</span>
+			</div>
+		</div>
+		<div class="play-list"></div>
+	</div>
+</body>
+</html>

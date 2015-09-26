@@ -1,0 +1,237 @@
+/* 页面背景 */
+body {
+	background: url(../img/bg.png);
+	font-family: 'Microsoft YaHei';
+  	-moz-user-select:none;/**ff*/
+  	-webkit-user-select:none;/**chrome、safari、360极速*/
+}
+
+/* 定义动画 */
+
+
+/* common style */
+@basecolor: rgba(32, 35, 41, 1);
+@basetextcolor: rgba(142, 145, 151, 1);
+@basebarcolor: rgba(83, 172, 195, 1);
+a {text-decoration: none;}
+
+/* 网页Start*/
+#player {
+	margin: 100px auto;
+}
+
+.h5p {
+	width: 358px;
+	height: 170px;
+	
+}
+
+.h5p-black {
+	background: @basecolor;
+	padding: 20px;
+	border-radius: 3px;
+	box-shadow: 0 0 3px @basecolor,0 0 2px 0 rgba(255, 255, 255, 0.5) inset;
+	border: 1px solid rgba(0, 0, 0, 0.6);
+	position: relative;
+}
+
+.h5p-cover {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	
+	.h5p-coverImg {
+		background: url(../img/coverImg.png) no-repeat;
+		position: absolute;
+		display: block;
+		width: 120px;
+		height: 120px;
+	}
+}
+
+.h5p-info {
+	width: 220px;
+	height: 75px;
+	margin: 0 0 0 140px;
+	text-align: center;
+	color: rgba(220, 222, 224, 1);
+	overflow:hidden;
+
+	.h5p-title {
+		font-size: 18px;
+	}
+
+	.h5p-artist {
+		color:lighten(@basetextcolor, 30%);
+		font-size: 12px;
+		margin:5px 0  5px 0;
+	}
+
+	.h5p-lrc {
+		color: @basetextcolor;
+		font-size: 10px;
+	}
+}
+
+.h5p-control {
+	width: 220px;
+	height: 45px;
+	margin: 0 0 0 140px;
+	overflow: hidden;
+
+	.h5p-buttons {
+		width: 135px;
+		height: 45px;	
+		float: left;
+		.h5p-btn{		
+			display: inline-block;
+			width: 36px;
+			height: 39px;
+			text-indent: -999px;
+			background: url(../img/buttons.png) no-repeat;
+		}
+
+		.others {
+			width: 29px;
+			height: 34px;
+			position: relative;
+			top:4px;
+		}
+		.btn-play {
+			&:hover{
+				background-position: 0 -40px;
+			}
+			&:active {
+				background-position: 0 -80px;
+			}
+		}
+	  	.btn-pause{
+		  background-position: -112px -40px;
+		  &:hover{
+			background-position: -112px 0;
+		  }
+		  &:active{
+			background-position: -112px -79px;
+		  }
+		}
+		.btn-prev {			
+			background-position: -40px -3px;					
+			&:hover {
+				background-position: -40px -43px;
+			}
+			&:active {
+				background-position: -40px -83px;
+			}
+		}
+
+		.btn-next {			
+			background-position: -73px -3px;
+			&:hover {
+				background-position: -73px -43px;
+			}
+			&:active {
+				background-position: -73px -83px;
+			}
+		}
+	}
+}
+
+.h5p-volume {
+	width: 85px;
+	height: 14px;
+	float: left;
+	position: relative;
+	top:15px;
+
+	.increase {
+		display: inline-block;
+		width: 17px;
+		height: 12px;
+		position: absolute;
+		top:2px;
+		background: url(../img/volume.png) no-repeat;
+		background-position: -4px -8px;
+	}
+
+	.base-bar {
+		display: inline-block;		
+		height: 6px;
+		width: 65px;
+		position: absolute;
+		left: 20px;
+		top:4px;
+		border-radius: 5px;
+		background: rgba(16, 17, 20, 0.5);		
+		box-shadow: 0 1px 0 rgba(47,51,60,1);
+		border-top: 1px solid rgb(18,18,18);
+	}
+	.process-bar {
+		display: block;
+		height: 100%;
+		width: 50%;
+		border-radius: 5px;
+		background: -webkit-linear-gradient(top,rgb(101,215,251),rgb(23,137,232)) ;
+	}
+	.slider {
+		width: 18px;
+		height: 18px;
+		position: absolute;
+		top:-5px;
+		left: 40%;
+		background: url(../img/volume.png) no-repeat;
+		background-position: -46px -7px;
+		cursor: pointer;
+	}
+}
+
+.h5p-progress {
+	margin-top: 20px;
+	width: 360px;
+	height: 35px;
+	font-size: 13px;
+
+	.base-bar {
+		height: 10px;
+		border-radius: 3px;
+		padding: 4px;
+		background: rgba(16, 17, 20, 0.4);		
+		box-shadow: 0 1px 0 rgba(47,51,60,1),2px 0 2px rgba(0,0,0,0.4) inset;
+		border-top: 1px solid rgb(18,18,18);
+	  	cursor: pointer;
+
+		.ready-bar {
+			display:block;
+			width:0;
+			height: 100%;
+			border-radius: 3px;
+			box-shadow: 0 -1px 0 rgba(84,88,97,1),0 1px 0 rgba(0, 0, 0, 0.6);			
+			background: -webkit-linear-gradient(90deg,rgba(36, 38, 43, 1),rgba(62, 66, 75, 1));			
+
+			.process-bar {
+				display:block;
+				width: 0;
+				height: 100%;
+				border-radius: 3px;
+				box-shadow: 0 -1px 0 rgba(141,214,226,1),0 1px 0 rgba(0, 0, 0, 0.6);
+				background: -webkit-linear-gradient(top,rgb(101,215,251),rgb(23,137,232));
+			}
+		}
+	}	
+
+	.h5p-time {
+		margin-top: 5px;
+		color: @basetextcolor;
+		.current-time {
+			color: rgba(220, 222, 224, 1);
+		}
+	}
+}
+
+.play-list {
+	display: none;
+}
+
+@media screen and (max-width: 600px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+
+}
+
